@@ -18,4 +18,11 @@ public class HelloWorldController {
     {
      return "index";
     }
+
+    @GetMapping("/accueil")
+    public String accueil()
+    {
+        return "accueil";
+    }
+
 }
