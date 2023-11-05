@@ -31,39 +31,24 @@
         </li>
     </ul>
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="col-md-6" >
             <table class="table table-responsive table-bordered" >
                 <thead>
                     <tr>
-                        <th>Nom Employée</th>
-                        <th>Prenom Employée</th>
-                        <th>Email Employée</th>
+                         <th>Nom d'utilisateur</th>
+                        <th>Email d'utilisateur</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>OUEDRAOGO</td>
-                        <td>Fatao</td>
-                        <td>fatao@gmail.com</td>
-
-                    </tr>
-                    <tr>
-                        <td>OUEDRAOGO</td>
-                        <td>Ibrahim</td>
-                        <td>fatao@gmail.com</td>
-
-                    </tr>
-                    <tr>
-                        <td>OUEDRAOGO</td>
-                        <td>Mamadi</td>
-                        <td>fatao@gmail.com</td>
-
-                    </tr>
-                    <tr>
-                        <td>OUEDRAOGO</td>
-                        <td>Amadé</td>
-                        <td>fatao@gmail.com</td>
+                    <tr th:each="user:${users}">
+                        <td th:text="${user.userName}" ></td>
+                        <td th:text="${user.email}"></td>
+                        <td>
+                            <a class="btn btn-primary" th:if="${user.role}=='ADMIN'" >UPDATE</a>
+                            <a class="btn btn-danger" th:if="${user.role}=='ADMIN'" >Delete</a>
+                            <a class="btn btn-primary" th:unless="${user.role}=='ADMIN'" >Voir</a>
+                        </td>
 
                     </tr>
                 </tbody>
