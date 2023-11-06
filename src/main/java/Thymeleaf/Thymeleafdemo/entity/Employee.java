@@ -14,8 +14,10 @@ public class Employee {
     private int id;
     private String name;
     private String email;
+
+    private String adresse;
     private String sexe;
-    private String passsword;
+    private String password;
 
     public int getId() {
         return id;
@@ -41,6 +43,16 @@ public class Employee {
         this.email = email;
     }
 
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+
     public String getSexe() {
         return sexe;
     }
@@ -49,13 +61,23 @@ public class Employee {
         this.sexe = sexe;
     }
 
-    public String getPasssword() {
-        return passsword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasssword(String passsword) {
-        this.passsword = passsword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", sexe='" + sexe + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

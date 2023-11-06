@@ -16,40 +16,40 @@
                         <p class="fs-4">Ajouter Employé</p>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="saveEmp" method="post">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingName" placeholder="Nom complet">
+                                <input type="text" class="form-control" id="floatingName" placeholder="Nom complet" name="name">
                                 <label for="floatingName">Nom complet</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingEmail" placeholder="nom@example.com">
+                                <input type="email" class="form-control" id="floatingEmail" placeholder="nom@example.com" name="email">
                                 <label for="floatingEmail">Email</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingAdress" placeholder="Quartier/Ville/Pays">
+                                <input type="text" class="form-control" id="floatingAdress" placeholder="Quartier/Ville/Pays" name="adresse">
                                 <label for="floatingAdress">Adresse</label>
                             </div>
 
                             <div class="form-check mb-3">
                                 <label>Sexe</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="genre" id="inlineRadio1" value="Homme">
+                                    <input class="form-check-input" type="radio" name="sexe" id="inlineRadio1" value="Homme">
                                     <label class="form-check-label" for="inlineRadio1">Homme</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="Femme">
+                                    <input class="form-check-input" type="radio" name="sexe" id="inlineRadio2" value="Femme">
                                     <label class="form-check-label" for="inlineRadio2">Femme</label>
                                 </div>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de pass">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de pass" name="password">
                                 <label for="floatingPassword">Mot de passe</label>
                             </div>
 
-                            <button class="btn btn-primary w-100 py-2" type="submit">Ajouter</button>
+                            <button class="btn btn-success w-100 py-2" type="submit">Ajouter</button>
 
                         </form>
                     </div>

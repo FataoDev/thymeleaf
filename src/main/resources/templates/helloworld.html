@@ -6,7 +6,10 @@
 </head>
 <body>
 
-    <h1 th:text="'Thymeleaf'+ ${message}+' App'" ></h1>
+    <h1 th:text="'Thymeleaf'+ ${message}+' App'" ><dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency></h1>
 
 </body>
 </html>
