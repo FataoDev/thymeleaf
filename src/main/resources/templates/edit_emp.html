@@ -2,13 +2,68 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org" th:replace="~{ base :: Layout(~{::title},~{::section})}">
 <head>
     <meta charset="UTF-8">
-    <title>Edit page</title>
+    <title>Modifier un employé</title>
 
 </head>
 <body>
 
 <section>
-    <h1>Edit Page</h1>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <p class="fs-4">Modifier Employé</p>
+                        <th:block th:if="${session.msg}" >
+                            <p class="text-center text-success fs-4 fw-bold " > [[${session.msg}]] </p>
+                            <th:block th:text="${@empServiceImp1.removeSessionMessage()}" > </th:block>
+                        </th:block>
+
+                    </div>
+                    <div class="card-body">
+                        <form action="/updateEmpId" method="post">
+                            <input type="hidden" name="id" th:value="${emp.id}" >
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingName" placeholder="Nom complet" name="name" th:value="${emp.name}" required>
+                                <label for="floatingName">Nom complet</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingEmail" placeholder="nom@example.com" name="email" th:value="${emp.email}" required>
+                                <label for="floatingEmail">Email</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingAdress" placeholder="Quartier/Ville/Pays" name="adresse" th:value="${emp.adresse}" required>
+                                <label for="floatingAdress">Adresse</label>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <label class="form-check-label"  >Sexe</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexe" id="inlineRadio1" value="Homme" th:attrappend="checked=${emp.sexe=='Homme' ? 'checked':''}" required >
+                                    <label class="form-check-label" for="inlineRadio1">Homme</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sexe" id="inlineRadio2" value="Femme" th:attrappend="checked=${emp.sexe=='Femme' ? 'checked':''}">
+                                    <label class="form-check-label" for="inlineRadio2">Femme</label>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de pass" name="password" th:value="${emp.password}" required>
+                                <label for="floatingPassword">Mot de passe</label>
+                            </div>
+
+                            <button class="btn btn-success w-100 py-2" type="submit">Modifier</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 </body>
 </html>

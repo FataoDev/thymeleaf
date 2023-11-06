@@ -13,6 +13,10 @@
         <div class="col-md-10 offset-md-1">
             <div class="card">
                 <div class="card-header text-center fs-4">Employées</div>
+                <th:block th:if="${session.msg}" >
+                    <p class="text-center text-success fs-4 fw-bold " > [[${session.msg}]] </p>
+                    <th:block th:text="${@empServiceImp1.removeSessionMessage()}" > </th:block>
+                </th:block>
                 <div class="card-body">
                     <table class="table">
                         <thead>
@@ -26,15 +30,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="emp:${empList}">
-                            <th scope="row">[[${emp.id}]]</th>
+                        <tr th:each="emp,c:${empList}">
+                            <th scope="row">[[${c.count}]]</th>
                             <td>[[${emp.name}]]</td>
                             <td>[[${emp.sexe}]]</td>
                             <td>[[${emp.email}]]</td>
                             <td>[[${emp.adresse}]]</td>
                             <td>
-                                <a class="btn btn-success">Modifier</a>
-                                <a class="btn btn-danger">Supprimer</a>
+                                <a th:href="@{'editEmp/'+${emp.id}}" class="btn btn-success">Modifier</a>
+                                <a th:href="@{'deleteEmp/'+${emp.id}}" class="btn btn-danger">Supprimer</a>
                             </td>
 
                         </tr>
