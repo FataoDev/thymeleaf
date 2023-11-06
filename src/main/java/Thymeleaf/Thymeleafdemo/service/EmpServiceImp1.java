@@ -2,8 +2,12 @@ package Thymeleaf.Thymeleafdemo.service;
 
 import Thymeleaf.Thymeleafdemo.entity.Employee;
 import Thymeleaf.Thymeleafdemo.repository.EmpRepository;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.List;
 
@@ -38,4 +42,11 @@ public class EmpServiceImp1 implements EmpService {
         }
         return false;
     }
+
+    public void removeSessionMessage()
+    {
+        HttpSession session =((ServletRequestAttributes)(RequestContextHolder.getRequestAttributes())).getRequest().getSession();
+        session.removeAttribute("msg");
+    }
+
 }

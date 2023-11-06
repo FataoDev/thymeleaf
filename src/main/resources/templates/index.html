@@ -7,7 +7,45 @@
 <body>
 
 <section>
-    <h1> INdex Page</h1>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header text-center fs-4">Employées</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col" >Id</th>
+                            <th scope="col">Nom & Prénom</th>
+                            <th scope="col">Sexe</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Adresse</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="emp:${empList}">
+                            <th scope="row">[[${emp.id}]]</th>
+                            <td>[[${emp.name}]]</td>
+                            <td>[[${emp.sexe}]]</td>
+                            <td>[[${emp.email}]]</td>
+                            <td>[[${emp.adresse}]]</td>
+                            <td>
+                                <a class="btn btn-success">Modifier</a>
+                                <a class="btn btn-danger">Supprimer</a>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 </section>
 
 </body>
