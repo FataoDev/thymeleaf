@@ -2,13 +2,62 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org" th:replace="~{ base :: Layout(~{::title},~{::section})}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Save Page</title>
 
 </head>
 <body>
 
 <section>
-<h1>Save Page1</h1>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <p class="fs-4">Ajouter Employé</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingName" placeholder="Nom complet">
+                                <label for="floatingName">Nom complet</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingEmail" placeholder="nom@example.com">
+                                <label for="floatingEmail">Email</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingAdress" placeholder="Quartier/Ville/Pays">
+                                <label for="floatingAdress">Adresse</label>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <label>Sexe</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genre" id="inlineRadio1" value="Homme">
+                                    <label class="form-check-label" for="inlineRadio1">Homme</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="Femme">
+                                    <label class="form-check-label" for="inlineRadio2">Femme</label>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de pass">
+                                <label for="floatingPassword">Mot de passe</label>
+                            </div>
+
+                            <button class="btn btn-primary w-100 py-2" type="submit">Ajouter</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 </body>
 </html>
